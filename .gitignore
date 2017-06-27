@@ -1,0 +1,10 @@
+.DS_Store
+.erlang.mk
+*.o
+*.d
+*.beam
+erl_crash.dump
+ebin
+priv/ctp_md_nif.so
+priv/ctp_td_nif.so
+c_src/env.mk

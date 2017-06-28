@@ -24,7 +24,7 @@ td_test() ->
     {ok, Version} = ctp_td_nif:get_api_version(Td),
     ?debugFmt("api version: ~p~n", [Version]),
 
-    ok = ctp_td_nif:register_front(Td, ?TD_FRONT_API),
+    ok = ctp_td_nif:register_front(Td, ?TD_FRONT_SIM),
     ok = ctp_td_nif:subscribe_private_topic(Td, ?THOST_TERT_QUICK),
     ok = ctp_td_nif:subscribe_public_topic(Td, ?THOST_TERT_QUICK),
 

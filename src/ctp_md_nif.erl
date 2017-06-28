@@ -1,7 +1,7 @@
 %%% -*- coding: utf-8 -*-
 
 -module(ctp_md_nif).
--on_load(init/0).
+
 -include("ctp_record.hrl").
 
 -export([new/1,
@@ -21,6 +21,10 @@
          req_user_logout/3
         ]).
 
+-define(NIF_STUB, erlang:nif_error(nif_library_not_loaded)).
+
+-on_load(init/0).
+
 init() ->
     PrivDir = case code:priv_dir(?MODULE) of
                   {error, _} ->
@@ -36,46 +40,46 @@ init() ->
 %%% ----------------------------------------------------------------------------
 
 new(_Pid) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 create_api(_Obj, _FlowPath) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 get_api_version(_Obj) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 init(_Obj) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 exit(_Obj) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 get_trading_day(_Obj) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 register_front(_Obj, _FrontAddress) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 register_name_server(_Obj, _NsAddress) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 register_fens_user_info(_Obj, _Req) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 subscribe_market_data(_Obj, _Ids) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 un_subscribe_market_data(_Obj, _Ids) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 subscribe_for_quote_rsp(_Obj, _Ids) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 un_subscribe_for_quote_rsp(_Obj, _Ids) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 req_user_login(_Obj, #cthost_ftdc_user_logout_field{} = _Req, _ReqId) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.
 
 req_user_logout(_Obj, #cthost_ftdc_user_logout_field{} = _Req, _ReqId) ->
-    erlang:exit(nif_library_not_loaded).
+    ?NIF_STUB.

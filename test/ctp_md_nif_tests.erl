@@ -18,7 +18,7 @@ md_test() ->
     {ok, Version} = ctp_md_nif:get_api_version(Md),
     ?debugFmt("api version: ~p~n", [Version]),
 
-    ok = ctp_md_nif:register_front(Md, ?MD_FRONT_API),
+    ok = ctp_md_nif:register_front(Md, ?MD_FRONT_SIM),
 
     ok = ctp_md_nif:init(Md),
     receive

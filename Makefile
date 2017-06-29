@@ -1,5 +1,5 @@
 PROJECT = ctp
-PROJECT_DESCRIPTION = ctp wrapper for erlang
+PROJECT_DESCRIPTION = Erlang NIF wrapper for ctp
 PROJECT_VERSION = 0.1.0
 ROOT_DIR = $(CURDIR)
 

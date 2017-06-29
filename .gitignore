@@ -16,7 +16,6 @@ erl_crash.dump
 _build
 rebar3.crashdump
 
-ebin
 c_src/env.mk
 priv/ctp_md_nif.so
 priv/ctp_td_nif.so

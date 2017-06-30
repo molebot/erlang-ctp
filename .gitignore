@@ -12,10 +12,12 @@
 .rebar
 .rebar3
 
-erl_crash.dump
 _build
+_rel
+deps
+logs
+erl_crash.dump
 rebar3.crashdump
-
+ebin/test
 c_src/env.mk
-priv/ctp_md_nif.so
-priv/ctp_td_nif.so
+priv/*.so

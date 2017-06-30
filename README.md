@@ -11,7 +11,7 @@ Build
 Test
 -----
 
-    $ make eunit
+    $ make tests
 
 More
 -----

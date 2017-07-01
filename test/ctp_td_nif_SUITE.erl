@@ -1,10 +1,12 @@
 -module(ctp_td_nif_SUITE).
 
--compile(export_all).
-
 -include_lib("common_test/include/ct.hrl").
 -include("ctp_record.hrl").
 -include("ctp_define.hrl").
+
+-export([all/0]).
+
+-export([test_td/1]).
 
 %% 请填写登录信息
 -define(BROKER_ID, <<"">>).
@@ -18,14 +20,14 @@
 -define(TD_FRONT_SIM, <<"tcp://180.168.146.187:10000">>).
 
 %%% ----------------------------------------------------------------------------
-%%% TEST SERVER CALLBACK FUNCTIONS
+%%% Common test callbacks
 %%% ----------------------------------------------------------------------------
 
 all() ->
     [test_td].
 
 %%% ----------------------------------------------------------------------------
-%%% TEST CASES
+%%% Test cases
 %%% ----------------------------------------------------------------------------
 
 test_td(_Config) ->

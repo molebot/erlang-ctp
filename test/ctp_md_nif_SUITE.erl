@@ -1,9 +1,11 @@
 -module(ctp_md_nif_SUITE).
 
--compile(export_all).
-
 -include_lib("common_test/include/ct.hrl").
 -include("ctp_record.hrl").
+
+-export([all/0]).
+
+-export([test_md/1]).
 
 %% SimNow测试用前置机地址
 -define(MD_FRONT_API, <<"tcp://180.168.146.187:10031">>).
@@ -12,19 +14,19 @@
 -define(MD_FRONT_SIM, <<"tcp://180.168.146.187:10010">>).
 
 %%% ----------------------------------------------------------------------------
-%%% TEST SERVER CALLBACK FUNCTIONS
+%%% Common test callbacks
 %%% ----------------------------------------------------------------------------
 
 all() ->
     [test_md].
 
 %%% ----------------------------------------------------------------------------
-%%% TEST CASES
+%%% Test cases
 %%% ----------------------------------------------------------------------------
 
 test_md(_Config) ->
     {ok, Md} = ctp_md_nif:new(self()),
-    ok = ctp_md_nif:create_api(Md, <<"/tmp/erlang_ctp_">>),
+    ok = ctp_md_nif:create_api(Md, <<"/tmp/erlang_ctp_md_">>),
 
     {ok, Version} = ctp_md_nif:get_api_version(Md),
     ct:pal("api version: ~p~n", [Version]),

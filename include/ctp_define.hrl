@@ -1,5 +1,8 @@
 %%% -*- coding: utf-8 -*-
 
+-ifndef(ctp_define_hrl).
+-define(ctp_define_hrl, true).
+
 %% 从当天的第一条记录开始接收数据流
 -define(THOST_TERT_RESTART, 0).
 
@@ -3608,3 +3611,5 @@
 
 %% 盈利比例
 -define(THOST_FTDC_STOV_ProfitRatio, <<"4">>).
+
+-endif. % -ifndef(ctp_define_hrl).

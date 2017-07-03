@@ -1,5 +1,8 @@
 %%% -*- coding: utf-8 -*-
 
+-ifndef(ctp_record_hrl).
+-define(ctp_record_hrl, true).
+
 -record(cthost_ftdc_dissemination_field, {
           %% 序列系列号
           sequence_series,
@@ -8717,3 +8720,5 @@
           %% DBF字段内容类型
           dbffd_content4
          }).
+
+-endif. % -ifndef(ctp_record_hrl).
